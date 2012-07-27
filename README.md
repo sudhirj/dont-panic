@@ -1,4 +1,9 @@
 dont-panic
 ==========
 
-The Don't Panic app - our team's entry into the TW app contest
+Database: Install the Postgres.app app: http://postgresapp.com/
+
+Install Ruby - rbenv/rvm.
+
+Install bundler- gem install bundler
+
