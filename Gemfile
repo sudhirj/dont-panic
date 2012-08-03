@@ -12,4 +12,3 @@ gem "haml-rails", ">= 0.3.4", :group => :development
 gem "twitter-bootstrap-rails", ">= 2.0.3", :group => :assets
 gem "therubyracer", :group => :assets, :platform => :ruby
 gem "rails-footnotes", ">= 3.7", :group => :development
-gem "will_paginate", ">= 3.0.3"
