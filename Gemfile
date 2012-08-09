@@ -1,5 +1,3 @@
-source 'https://rubygems.org'
-
 gem 'rails', '~> 3.2'
 
 gem 'pg'
@@ -19,7 +17,7 @@ end
 
 group :development, :test do
   gem 'rspec-rails'
-  gem 'shoulda'
+  gem 'shoulda-matchers'
   gem 'sqlite3'
   gem 'pry'
   gem 'autotest-rails'
