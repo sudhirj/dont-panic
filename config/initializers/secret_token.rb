@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-DontPanic::Application.config.secret_token = '3a5f9fddc2c321a519996827b5638fec2a6f4709cab990305ae6eeb06d9b3f34abe0e69216b9710960920ca5780a6de8e1c3b41a98b660958a141406252dbac5'
+DontPanic::Application.config.secret_token = 'eb04095a1f2d58649f49a4fc21514e3f8d0f4a530b35e870ce623e3f7d4528b2d2cad31a75a5a7d554553f13f88f35e4b3131477f9641fc5108e6048e7fe082e'

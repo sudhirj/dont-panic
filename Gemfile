@@ -1,12 +1,35 @@
 source 'https://rubygems.org'
-gem 'rails', '3.2.3'
-gem 'sqlite3'
+
+gem 'rails', '~> 3.2'
+
+gem 'pg'
+gem 'activerecord-postgres-hstore'
+gem 'squeel'
+
+gem 'omniauth-google-oauth2'
+
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
+  gem 'jquery-rails'
+  gem 'sass-rails', '~> 3.2'
+  gem 'coffee-rails', '~> 3.2'
+  gem 'compass-rails'
+  gem 'anjlab-bootstrap-rails', '>= 2.0', :require => 'bootstrap-rails'
   gem 'uglifier', '>= 1.0.3'
 end
-gem 'jquery-rails'
-gem "bootstrap-sass", ">= 2.0.4.0"
-gem "rails-footnotes", ">= 3.7", :group => :development
-gem "therubyracer", :group => :assets, :platform => :ruby
+
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'shoulda'
+  gem 'sqlite3'
+  gem 'pry'
+  gem 'autotest-rails'
+  gem 'autotest-growl'
+  gem 'spork-rails'
+  gem 'foreman'
+  gem 'guard'
+  gem 'guard-shell'
+  gem 'heroku'
+  gem 'factory_girl_rails'
+end
+
+gem 'unicorn'
