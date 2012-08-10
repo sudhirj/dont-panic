@@ -1,3 +1,4 @@
+source 'https://rubygems.org'
 gem 'rails', '~> 3.2'
 
 gem 'pg'
@@ -12,7 +13,7 @@ group :assets do
   gem 'coffee-rails', '~> 3.2'
   gem 'compass-rails'
   gem 'anjlab-bootstrap-rails', '>= 2.0', :require => 'bootstrap-rails'
-  gem 'uglifier', '>= 1.0.3'
+  gem 'uglifier'
 end
 
 group :development, :test do
