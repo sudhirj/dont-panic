@@ -6,5 +6,4 @@ class Office < ActiveRecord::Base
   has_many :admins
   belongs_to :company
   belongs_to :city
-
 end

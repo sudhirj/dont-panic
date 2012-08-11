@@ -1,4 +1,16 @@
 DontPanic::Application.routes.draw do
+  resources :hotspots
+
+  resources :admins
+
+  resources :cities
+
+  resources :companies
+
+  resources :countries
+
+  resources :offices
+
   root :to => 'home#index'
   resources :home
   # The priority is based upon order of creation:

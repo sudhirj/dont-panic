@@ -11,7 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120810172502) do
+ActiveRecord::Schema.define(:version => 20120811063130) do
+
+  create_table "addresses", :force => true do |t|
+    t.string   "address_line_1"
+    t.string   "address_line_2"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  create_table "admins", :force => true do |t|
+    t.integer  "office_id"
+    t.integer  "contact_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "cities", :force => true do |t|
     t.string   "name"
@@ -26,8 +40,36 @@ ActiveRecord::Schema.define(:version => 20120810172502) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "contacts", :force => true do |t|
+    t.string   "name"
+    t.string   "phone_number"
+    t.string   "email"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
   create_table "countries", :force => true do |t|
     t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "hotspots", :force => true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.string   "type"
+    t.string   "reviews"
+    t.integer  "address_id"
+    t.integer  "location_id"
+    t.integer  "contact_id"
+    t.integer  "city_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "locations", :force => true do |t|
+    t.decimal  "latitude"
+    t.decimal  "longitude"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

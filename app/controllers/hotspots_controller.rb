@@ -1,0 +1,2 @@
+class HotspotsController < ApplicationController
+end
