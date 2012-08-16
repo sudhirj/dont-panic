@@ -8,7 +8,7 @@ test:
   database: dont_panic_test
   host: localhost
 
-development:
+production:
   adapter: postgresql
   database: dont_panic_prod
   host: localhost
