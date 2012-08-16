@@ -5,6 +5,7 @@ gem 'rails', '~> 3.2'
 gem 'pg'
 gem 'activerecord-postgres-hstore'
 gem 'squeel'
+gem 'activeadmin'
 
 gem 'omniauth-google-oauth2'
 
