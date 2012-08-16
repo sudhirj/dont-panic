@@ -14,8 +14,8 @@
 ActiveRecord::Schema.define(:version => 20120816112140) do
 
   create_table "admins", :force => true do |t|
-    t.integer  "name"
-    t.integer  "contact_details"
+    t.string   "name"
+    t.string   "contact_details"
     t.integer  "office_id"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
@@ -63,8 +63,8 @@ ActiveRecord::Schema.define(:version => 20120816112140) do
     t.string   "longitude"
     t.string   "latitude"
     t.string   "contact_number"
-    t.string   "place_type_id"
-    t.string   "city_id"
+    t.integer  "place_type_id"
+    t.integer  "city_id"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
   end

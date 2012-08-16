@@ -8,8 +8,8 @@ class CreatePlaces < ActiveRecord::Migration
       t.string :longitude
       t.string :latitude
       t.string :contact_number
-      t.string :place_type_id
-      t.string :city_id
+      t.integer :place_type_id
+      t.integer :city_id
       t.timestamps
     end
   end
