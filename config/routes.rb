@@ -5,8 +5,6 @@ DontPanic::Application.routes.draw do
 
   resources :places
 
-  resources :admins
-
   resources :cities
 
   resources :companies
@@ -14,6 +12,8 @@ DontPanic::Application.routes.draw do
   resources :countries
 
   resources :offices
+
+  resources :administrators
 
   root :to => 'home#index'
   resources :home

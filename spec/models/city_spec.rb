@@ -4,5 +4,5 @@ describe City do
   it {should validate_presence_of(:name)}
   it {should belong_to(:country)}
   it {should have_many(:offices)}
-  it {should have_many(:hotspots)}
+  it {should have_many(:places)}
 end
