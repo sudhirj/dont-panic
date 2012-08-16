@@ -11,20 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120811063130) do
-
-  create_table "addresses", :force => true do |t|
-    t.string   "address_line_1"
-    t.string   "address_line_2"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
-  end
+ActiveRecord::Schema.define(:version => 20120816112140) do
 
   create_table "admins", :force => true do |t|
+    t.integer  "name"
+    t.integer  "contact_details"
     t.integer  "office_id"
-    t.integer  "contact_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
   create_table "cities", :force => true do |t|
@@ -40,36 +34,8 @@ ActiveRecord::Schema.define(:version => 20120811063130) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "contacts", :force => true do |t|
-    t.string   "name"
-    t.string   "phone_number"
-    t.string   "email"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
-  end
-
   create_table "countries", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "hotspots", :force => true do |t|
-    t.string   "name"
-    t.string   "description"
-    t.string   "type"
-    t.string   "reviews"
-    t.integer  "address_id"
-    t.integer  "location_id"
-    t.integer  "contact_id"
-    t.integer  "city_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-  end
-
-  create_table "locations", :force => true do |t|
-    t.decimal  "latitude"
-    t.decimal  "longitude"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -81,6 +47,26 @@ ActiveRecord::Schema.define(:version => 20120811063130) do
     t.integer  "company_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "place_types", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "places", :force => true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.string   "address1"
+    t.string   "address2"
+    t.string   "longitude"
+    t.string   "latitude"
+    t.string   "contact_number"
+    t.string   "place_type_id"
+    t.string   "city_id"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
 end

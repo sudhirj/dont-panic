@@ -1,5 +1,5 @@
 DontPanic::Application.routes.draw do
-  resources :hotspots
+  resources :places
 
   resources :admins
 

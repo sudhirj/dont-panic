@@ -1,4 +1,5 @@
 class Admin < ActiveRecord::Base
   belongs_to :office
-  belongs_to :contact
+
+  validates_presence_of :name,:contact_details
 end
