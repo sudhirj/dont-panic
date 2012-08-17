@@ -1,0 +1,13 @@
+language: ruby
+rvm:
+  - 1.9.3
+bundler_args: --binstubs
+before_script:
+  - psql -c 'create database dont_panic_test;' -U test
+script: "bundle exec rake spec"
+branches:
+  only:
+    - master
+notifications:
+  recipients:
+    - prasann@thoughtworks.com
