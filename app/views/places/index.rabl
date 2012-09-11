@@ -1,0 +1,1 @@
+attributes :name, :description, :address, :longitude, :latitude, :phone_numbers, :place_type_id

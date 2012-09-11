@@ -1,0 +1,1 @@
+attributes :company_id, :city_id, :name, :address, :longitude, :latitude, :phone_numbers
