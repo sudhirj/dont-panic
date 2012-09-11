@@ -48,14 +48,15 @@ ActiveRecord::Schema.define(:version => 20120816180745) do
 
   create_table "administrators", :force => true do |t|
     t.string   "name"
-    t.string   "contact_details"
+    t.string   "phone_numbers"
     t.integer  "office_id"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
   create_table "cities", :force => true do |t|
     t.string   "name"
+    t.string   "code"
     t.integer  "country_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
@@ -69,6 +70,7 @@ ActiveRecord::Schema.define(:version => 20120816180745) do
 
   create_table "countries", :force => true do |t|
     t.string   "name"
+    t.string   "code"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -76,10 +78,13 @@ ActiveRecord::Schema.define(:version => 20120816180745) do
   create_table "offices", :force => true do |t|
     t.string   "name"
     t.string   "address"
+    t.decimal  "longitude"
+    t.decimal  "latitude"
+    t.string   "phone_numbers"
     t.integer  "city_id"
     t.integer  "company_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
   create_table "place_types", :force => true do |t|
@@ -91,15 +96,14 @@ ActiveRecord::Schema.define(:version => 20120816180745) do
   create_table "places", :force => true do |t|
     t.string   "name"
     t.string   "description"
-    t.string   "address1"
-    t.string   "address2"
-    t.string   "longitude"
-    t.string   "latitude"
-    t.string   "contact_number"
+    t.string   "address"
+    t.decimal  "longitude"
+    t.decimal  "latitude"
+    t.string   "phone_numbers"
     t.integer  "place_type_id"
     t.integer  "city_id"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
 end

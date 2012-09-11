@@ -3,8 +3,12 @@ class CreateOffices < ActiveRecord::Migration
     create_table :offices do |t|
       t.string :name
       t.string :address
-      t.integer :city_id
-      t.integer :company_id
+      t.decimal :longitude
+      t.decimal :latitude
+      t.string :phone_numbers
+
+      t.references :city
+      t.references :company
 
       t.timestamps
     end
