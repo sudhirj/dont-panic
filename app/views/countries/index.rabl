@@ -1,0 +1,1 @@
+attributes :name, :code, :updated_at
