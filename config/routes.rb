@@ -2,6 +2,7 @@ DontPanic::Application.routes.draw do
   ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config
+  match 'home/data' => 'home#data'
 
   resources :places
 
@@ -17,6 +18,7 @@ DontPanic::Application.routes.draw do
 
   root :to => 'home#index'
   resources :home
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
