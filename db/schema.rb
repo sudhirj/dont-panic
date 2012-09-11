@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(:version => 20120816180745) do
   create_table "administrators", :force => true do |t|
     t.string   "name"
     t.string   "phone_numbers"
+    t.string   "email"
     t.integer  "office_id"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
@@ -81,6 +82,7 @@ ActiveRecord::Schema.define(:version => 20120816180745) do
     t.decimal  "longitude"
     t.decimal  "latitude"
     t.string   "phone_numbers"
+    t.string   "email"
     t.integer  "city_id"
     t.integer  "company_id"
     t.datetime "created_at",    :null => false
@@ -100,6 +102,7 @@ ActiveRecord::Schema.define(:version => 20120816180745) do
     t.decimal  "longitude"
     t.decimal  "latitude"
     t.string   "phone_numbers"
+    t.string   "email"
     t.integer  "place_type_id"
     t.integer  "city_id"
     t.datetime "created_at",    :null => false
