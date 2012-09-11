@@ -6,7 +6,8 @@ gem 'pg'
 gem 'activerecord-postgres-hstore'
 gem 'squeel'
 gem 'activeadmin'
-
+gem 'rabl'
+gem 'oj'
 gem 'omniauth-google-oauth2'
 
 group :assets do
