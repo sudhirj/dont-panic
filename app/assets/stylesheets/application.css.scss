@@ -9,14 +9,9 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+
  *= require twitter/bootstrap
-<<<<<<< Updated upstream
- 
-=======
->>>>>>> Stashed changes
+ *= require theme 
+ *= require twitter/bootstrap-responsive
  *= require_directory .
 */
-
-.content{
-    margin:20px;
-}

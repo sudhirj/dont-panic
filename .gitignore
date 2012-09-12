@@ -16,3 +16,5 @@
 
 # Ignore RubyMine Files
 /.idea
+
+.DS_Store

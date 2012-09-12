@@ -1,1 +1,2 @@
-attributes :name, :code, :updated_at
+collection @countries, :object_root => false
+attributes :id, :name, :code
