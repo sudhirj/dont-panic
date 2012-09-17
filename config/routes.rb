@@ -17,6 +17,8 @@ DontPanic::Application.routes.draw do
 
   resources :data
 
+  match "/tree" => "home#tree"
+
   root :to => 'home#index'
 
 end

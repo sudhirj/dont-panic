@@ -78,7 +78,7 @@ ActiveRecord::Schema.define(:version => 20120816180745) do
 
   create_table "offices", :force => true do |t|
     t.string   "name"
-    t.string   "address"
+    t.text     "address"
     t.decimal  "longitude"
     t.decimal  "latitude"
     t.string   "phone_numbers"

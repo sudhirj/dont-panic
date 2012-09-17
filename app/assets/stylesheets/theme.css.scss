@@ -3,8 +3,12 @@ body {
 }
 
 .header {
+  cursor: pointer;
   span {
     color: #aaa;
-  }
-  
+  }  
+}
+
+.panic {
+  color: darkRed;
 }

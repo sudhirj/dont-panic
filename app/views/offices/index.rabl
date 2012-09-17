@@ -1,1 +1,3 @@
-attributes :company_id, :city_id, :name, :address, :longitude, :latitude, :phone_numbers
+collection @offices, :object_root => false
+attributes :id, :name, :address, :city_id
+

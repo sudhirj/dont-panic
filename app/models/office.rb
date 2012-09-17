@@ -1,5 +1,5 @@
 class Office < ActiveRecord::Base
-  has_many :admins
+  has_many :administrators
   belongs_to :company
   belongs_to :city
 

@@ -1,110 +1,67 @@
 <div class="container">
- <div class="row">
-  <div class="span12">
-    <h1>DON'T PANIC</h1>
-  </div>
- </div>
-  <div class="row">
-    <div class="span12 header">
-      <h3>
-        Country
-        <span>(India)</span> <i class="icon-chevron-up"></i>
-      </h3>
-    </div>
-    <div class="span12">
-      <ul class="nav nav-tabs nav-stacked">
-        <li>
-          <a href="#">India</a>
-        </li>
-        <li class="active">
-          <a href="#">USA</a>
-        </li>
-        <li>
-          <a href="#">China</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div class="row">
-    <div class="span12 header">
-      <h3>
-        City
-        <span>(Chennai)</span> <i class="icon-chevron-up"></i>
-      </h3>
-    </div>
-    <div class="span12">
-      <ul class="nav nav-tabs nav-stacked">
-        <li>
-          <a href="#">Chennai</a>
-        </li>
-        <li class="active">
-          <a href="#">Bangalore</a>
-        </li>
-        <li>
-          <a href="#">Pune</a>
-        </li>
-      </ul>
-    </div>
-  </div>
   <div class="row">
     <div class="span12">
-      <h3>
-        Offices
-        <i class="icon-chevron-up"></i>
-      </h3>
+      <h1>
+        DON'T |
+        <span class="panic">PANIC</span>
+      </h1>
     </div>
-    <div class="span12">
-      <ul class="nav nav-pills">
-        <li class="active">
-          <a href="#">ThoughtWorks</a>
-        </li>
-        <li>
-          <a href="#">McKinsey</a>
-        </li>
-        <li>
-          <a href="#">Guardian</a>
-        </li>
-      </ul>
-    </div>
-    <div class="span12">
-      <div class="row">
-        <div class="span12">
-          <h4>Chennai Ascendas</h4>
-        </div>
-        <div class="span8">
-          <address> <strong>Ascendas International Tech Park</strong>
-            <br/>
-            Zenith - 9th Floor
-            <br/>
-            Tharamani Road
-            <br/>
-            Tharamani
-            <br/>
-            Chennai - 600 113, India
-            <br/>
-          </address>
-        </div>
-        <div class="span4">+91 44 4901 8400</div>
+  </div>
+  <span ng-controller="Controller">
+    <div class="row">
+      <div class="span12 header">
+        <h3>
+          Country
+          <span>({{chosenCountry.name}})</span> <i class="icon-chevron-up"></i>
+        </h3>
       </div>
-      <div class="row">
-        <div class="span12">
-          <h4>Chennai Ascendas</h4>
-        </div>
-        <div class="span8">
-          <address> <strong>Ascendas International Tech Park</strong>
-            <br/>
-            Zenith - 9th Floor
-            <br/>
-            Tharamani Road
-            <br/>
-            Tharamani
-            <br/>
-            Chennai - 600 113, India
-            <br/>
-          </address>
-        </div>
-        <div class="span4">+91 44 4901 8400</div>
+      <div class="span12">
+        <ul class="nav nav-tabs nav-stacked">
+          <li ng-repeat="country in data" class="{{country == chosenCountry && 'active'}}">
+            <a href="" ng-click="chooseCountry(country)">{{country.name}}</a>
+          </li>
+        </ul>
       </div>
     </div>
-  </div>
+
+    <div class="row">
+      <div class="span12 header">
+        <h3>
+          City
+          <span>({{chosenCity.name}})</span> <i class="icon-chevron-up"></i>
+        </h3>
+      </div>
+      <div class="span12">
+        <ul class="nav nav-tabs nav-stacked">
+          <li ng-repeat="city in chosenCountry.cities" class="{{city == chosenCity && 'active'}}">
+            <a href="" ng-click="chooseCity(city)">{{city.name}}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="span12 header">
+        <h3>
+          Offices
+          <span>({{chosenCompany.name}})</span>
+          <i class="icon-chevron-up"></i>
+        </h3>
+      </div>
+      <div class="span12">
+        <ul class="nav nav-pills">
+          <li ng-repeat="company in chosenCity.companies" class="{{company == chosenCompany && 'active'}}">
+            <a href="" ng-click="chooseCompany(company)">{{company.name}}</a>
+          </li>          
+        </ul>
+        <div class="row" ng-repeat="office in chosenCompany.offices">
+          <div class="span6">
+            <strong>{{office.name}}</strong>
+            <address>{{office.address}}</address>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </span>
 </div>
