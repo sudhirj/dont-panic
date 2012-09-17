@@ -6,5 +6,6 @@ class DataController < ApplicationController
     @offices = Office.all
     @places = Place.all
     @administrators = Administrator.all
+    @place_types = PlaceType.all
   end
 end

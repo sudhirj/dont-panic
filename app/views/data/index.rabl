@@ -17,3 +17,6 @@ end
 child @places do
     attributes *Place.column_names
 end
+child @place_types do
+     attributes *Place.column_names
+end
