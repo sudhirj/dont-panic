@@ -52,14 +52,21 @@
         <ul class="nav nav-pills">
           <li ng-repeat="company in chosenCity.companies" class="{{company == chosenCompany && 'active'}}">
             <a href="" ng-click="chooseCompany(company)">{{company.name}}</a>
-          </li>          
+          </li>
         </ul>
-        <div class="row" ng-repeat="office in chosenCompany.offices">
-          <div class="span6">
-            <strong>{{office.name}}</strong>
-            <address>{{office.address}}</address>
+        <span ng-repeat="office in chosenCompany.offices">
+          <div class="row" >
+            <div class="span6"> <strong>{{office.name}}</strong>
+              <address ng-bind-html-unsafe="office.address"></address>
+            </div>
+            <div class="span6">
+              <span class="admin" ng-repeat="admin in office.admins"> <strong>{{admin.name}}</strong>
+                <address ng-bind-html-unsafe="admin.number"></address>
+              </span>
+            </div>
           </div>
-        </div>
+          <hr class="clearfix"/>
+        </span>
       </div>
     </div>
 

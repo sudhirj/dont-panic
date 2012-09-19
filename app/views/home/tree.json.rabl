@@ -11,7 +11,7 @@ child :cities => :cities do
       company[:offices].map do |office|
         {
           name: office.name, 
-          address: office.address,
+          address: office.display_address,
           admins: office.administrators.map {|admin| {name: admin.name, number: admin.phone_numbers}}
         }
       end
