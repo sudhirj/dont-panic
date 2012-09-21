@@ -4,8 +4,4 @@ class Office < ActiveRecord::Base
   belongs_to :city
 
   validates_presence_of :name, :address
-
-  def display_address
-    address.gsub /\n/, '<br/>'
-  end
 end

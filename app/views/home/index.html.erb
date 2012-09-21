@@ -1,19 +1,19 @@
 <div class="container">
-  <div class="row">
+  <div class="row heading">
     <div class="span12">
-      <h1>
+      <h2>
         DON'T |
         <span class="panic">PANIC</span>
-      </h1>
+      </h2>
     </div>
   </div>
   <span ng-controller="Controller">
     <div class="row">
       <div class="span12 header">
-        <h3>
+        <h4>
           Country
           <span>({{chosenCountry.name}})</span> <i class="icon-chevron-up"></i>
-        </h3>
+        </h4>
       </div>
       <div class="span12">
         <ul class="nav nav-tabs nav-stacked">
@@ -26,10 +26,10 @@
 
     <div class="row">
       <div class="span12 header">
-        <h3>
+        <h4>
           City
           <span>({{chosenCity.name}})</span> <i class="icon-chevron-up"></i>
-        </h3>
+        </h4>
       </div>
       <div class="span12">
         <ul class="nav nav-tabs nav-stacked">
@@ -42,11 +42,11 @@
 
     <div class="row">
       <div class="span12 header">
-        <h3>
+        <h4>
           Offices
           <span>({{chosenCompany.name}})</span>
           <i class="icon-chevron-up"></i>
-        </h3>
+        </h4>
       </div>
       <div class="span12">
         <ul class="nav nav-pills">
@@ -54,6 +54,7 @@
             <a href="" ng-click="chooseCompany(company)">{{company.name}}</a>
           </li>
         </ul>
+        <hr class="clearfix"/>
         <span ng-repeat="office in chosenCompany.offices">
           <div class="row" >
             <div class="span6"> <strong>{{office.name}}</strong>
@@ -68,7 +69,38 @@
           <hr class="clearfix"/>
         </span>
       </div>
+    </div>    
+    <div class="row">
+      <div class="span12 header">
+        <h4>
+          Places
+          <span>({{chosenPlaceType.name}})</span>
+          <i class="icon-chevron-up"></i>
+        </h4>
+      </div>
+      <div class="span12">
+        <ul class="nav nav-pills">
+          <li ng-repeat="placeType in chosenCity.placeTypes" class="{{placeType == chosenPlaceType && 'active'}}">
+            <a href="" ng-click="choosePlaceType(placeType)">{{placeType.name}}</a>
+          </li>
+        </ul>
+        <hr class="clearfix"/>
+        <span ng-repeat="place in chosenPlaceType.places">
+          <div class="row" >
+            <div class="span6"> <strong>{{place.name}}</strong>
+              <address ng-bind-html-unsafe="place.address"></address>
+            </div>
+            <!-- <div class="span6">
+              <span class="admin" ng-repeat="admin in office.admins"> <strong>{{admin.name}}</strong>
+                <address ng-bind-html-unsafe="admin.number"></address>
+              </span>
+            </div> -->
+          </div>
+          <hr class="clearfix"/>
+        </span>
+      </div>
     </div>
+
 
   </span>
 </div>

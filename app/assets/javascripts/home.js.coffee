@@ -17,9 +17,10 @@ window.Controller = (scope) ->
   scope.chooseCity = (city) -> 
     scope.chosenCity = city
     if city.companies then scope.chooseCompany city.companies[0]
+    if city.placeTypes then scope.choosePlaceType city.placeTypes[0]
 
-  scope.chooseCompany = (company) ->
-    scope.chosenCompany = company
+  scope.chooseCompany = (company) -> scope.chosenCompany = company
 
+  scope.choosePlaceType = (placeType) -> scope.chosenPlaceType = placeType
 
 window.Controller.$inject = ['$scope']
