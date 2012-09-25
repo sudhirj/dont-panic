@@ -25,6 +25,6 @@ window.Controller = (scope) ->
 
   scope.displayAddress = (address) -> address.replace /\n/g, '<br/>'
   scope.displayPhoneNumbers = (numbers) -> numbers.split(',')
-  scope.mapLink = (place) -> "https://maps.google.com/maps?q=#{[place.name,place.address].join(',')}"
+  scope.mapLink = (place) -> "https://maps.google.com/maps?q=#{place.address.replace(/\n/g, ',').replace(/\s+/g, '+')}"
 
 window.Controller.$inject = ['$scope']
