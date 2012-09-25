@@ -57,19 +57,24 @@
         <hr class="clearfix"/>
         <span ng-repeat="office in chosenCompany.offices">
           <div class="row" >
-            <div class="span6"> <strong>{{office.name}}</strong>
-              <address ng-bind-html-unsafe="office.address"></address>
+            <div class="span6"> <h5>{{office.name}}</h5>
+              <address ng-bind-html-unsafe="displayAddress(office.address)"></address>
             </div>
             <div class="span6">
-              <span class="admin" ng-repeat="admin in office.admins"> <strong>{{admin.name}}</strong>
-                <address ng-bind-html-unsafe="admin.number"></address>
+              <span class="admin" ng-repeat="admin in office.admins"> 
+                <h5>Contact {{admin.name}}</h5>
+                <div>
+                  <div class="btn-group btn-group-vertical">
+                    <a ng-repeat="number in displayPhoneNumbers(admin.number)" ng-bind-html-unsafe="number" class="btn" href="tel:{{number}}"></a>
+                  </div>                  
+                </div>
               </span>
             </div>
           </div>
           <hr class="clearfix"/>
         </span>
       </div>
-    </div>    
+    </div>
     <div class="row">
       <div class="span12 header">
         <h4>
@@ -87,20 +92,15 @@
         <hr class="clearfix"/>
         <span ng-repeat="place in chosenPlaceType.places">
           <div class="row" >
-            <div class="span6"> <strong>{{place.name}}</strong>
+            <div class="span6">
+              <strong>{{place.name}}</strong>
               <address ng-bind-html-unsafe="place.address"></address>
             </div>
-            <!-- <div class="span6">
-              <span class="admin" ng-repeat="admin in office.admins"> <strong>{{admin.name}}</strong>
-                <address ng-bind-html-unsafe="admin.number"></address>
-              </span>
-            </div> -->
           </div>
           <hr class="clearfix"/>
         </span>
       </div>
     </div>
-
 
   </span>
 </div>

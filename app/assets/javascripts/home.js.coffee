@@ -23,4 +23,7 @@ window.Controller = (scope) ->
 
   scope.choosePlaceType = (placeType) -> scope.chosenPlaceType = placeType
 
+  scope.displayAddress = (address) -> address.replace /\n/, '<br/>'
+  scope.displayPhoneNumbers = (numbers) -> numbers.split(',')
+
 window.Controller.$inject = ['$scope']
