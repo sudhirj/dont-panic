@@ -57,7 +57,7 @@
         <span ng-repeat="office in chosenCompany.offices">
           <div class="row" >
             <div class="span6"> <h5>{{office.name}}</h5>
-              <a href="{{mapLink(office)}}"><address ng-bind-html-unsafe="displayAddress(office.address)"></address></a>
+              <a href="{{office.map}}"><address ng-bind-html-unsafe="displayAddress(office.address)"></address></a>
             </div>
             <div class="span6">
               <span class="admin" ng-repeat="admin in office.admins">                 
@@ -92,7 +92,7 @@
           <div class="row" >
             <div class="span6">
               <strong>{{place.name}}</strong>
-              <a href="{{mapLink(place)}}"><address ng-bind-html-unsafe="place.address"></address></a>
+              <a href="{{place.map}}"><address ng-bind-html-unsafe="place.address"></address></a>
             </div>
           </div>
           <hr class="clearfix"/>

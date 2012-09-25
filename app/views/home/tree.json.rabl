@@ -12,7 +12,9 @@ child :cities => :cities do
         {
           name: office.name, 
           address: office.address,
-          admins: office.administrators.map {|admin| {name: admin.name, number: admin.phone_numbers}}
+          admins: office.administrators.map {|admin| {name: admin.name, number: admin.phone_numbers}},
+          map: office.map
+
         }
       end
     end
@@ -24,7 +26,8 @@ child :cities => :cities do
       place_type[:places].map do |place|
         {
           name: place.name, 
-          address: place.address,          
+          address: place.address,
+          map: place.map
         }
       end
     end

@@ -24,7 +24,6 @@ window.Controller = (scope) ->
   scope.choosePlaceType = (placeType) -> scope.chosenPlaceType = placeType
 
   scope.displayAddress = (address) -> address.replace /\n/g, '<br/>'
-  scope.displayPhoneNumbers = (numbers) -> numbers.split(',')
-  scope.mapLink = (place) -> "https://maps.google.com/maps?q=#{place.address.replace(/\n/g, ',').replace(/\s+/g, '+')}"
+  scope.displayPhoneNumbers = (numbers) -> numbers.split(',')  
 
 window.Controller.$inject = ['$scope']
