@@ -93,7 +93,7 @@
           <div class="row" >
             <div class="span6">
               <strong>{{place.name}}</strong>
-              <a href="{{place.map}}"><address ng-bind-html-unsafe="place.address"></address></a>
+              <a href="{{place.map}}"><address ng-bind-html-unsafe="displayAddress(place.address)"></address></a>
             </div>
           </div>
           <hr class="clearfix"/>
