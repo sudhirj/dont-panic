@@ -27,3 +27,12 @@ window.Controller = (scope) ->
   scope.displayPhoneNumbers = (numbers) -> numbers.split(',')  
 
 window.Controller.$inject = ['$scope']
+
+$ ->
+  $('.icon-chevron-down').hide()
+  $('.section').each ->
+    section =$(this)
+    section.find('h4').click ->      
+      section.find('.togglee').toggle()
+      section.find('.icon-chevron-up').toggle()
+      section.find('.icon-chevron-down').toggle()

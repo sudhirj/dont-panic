@@ -8,14 +8,14 @@
     </div>
   </div>
   <span ng-controller="Controller">
-    <div class="row">
+    <div class="row section">
       <div class="span12 header">
         <h4>
           Country
-          <span>({{chosenCountry.name}})</span> <i class="icon-chevron-up"></i>
+          <span>({{chosenCountry.name}})</span> <i class="icon-chevron-up"></i><i class="icon-chevron-down"></i>
         </h4>
       </div>
-      <div class="span12">
+      <div class="span12 togglee">
         <ul class="nav nav-tabs nav-stacked">
           <li ng-repeat="country in data" class="{{country == chosenCountry && 'active'}}">
             <a href="" ng-click="chooseCountry(country)">{{country.name}}</a>
@@ -24,14 +24,14 @@
       </div>
     </div>
 
-    <div class="row">
+    <div class="row section">
       <div class="span12 header">
         <h4>
           City
-          <span>({{chosenCity.name}})</span> <i class="icon-chevron-up"></i>
+          <span>({{chosenCity.name}})</span> <i class="icon-chevron-up"></i><i class="icon-chevron-down"></i>
         </h4>
       </div>
-      <div class="span12">
+      <div class="span12 togglee">
         <ul class="nav nav-tabs nav-stacked">
           <li ng-repeat="city in chosenCountry.cities" class="{{city == chosenCity && 'active'}}">
             <a href="" ng-click="chooseCity(city)">{{city.name}}</a>
@@ -40,15 +40,15 @@
       </div>
     </div>
 
-    <div class="row">
+    <div class="row section">
       <div class="span12 header">
         <h4>
           Offices
           <span>({{chosenCompany.name}})</span>
-          <i class="icon-chevron-up"></i>
+          <i class="icon-chevron-up"></i><i class="icon-chevron-down"></i>
         </h4>
       </div>
-      <div class="span12">
+      <div class="span12 togglee">
         <ul class="nav nav-pills">
           <li ng-repeat="company in chosenCity.companies" class="{{company == chosenCompany && 'active'}}">
             <a href="" ng-click="chooseCompany(company)">{{company.name}}</a>
@@ -74,15 +74,16 @@
         </span>
       </div>
     </div>
-    <div class="row">
+
+    <div class="row section">
       <div class="span12 header">
         <h4>
           Places
           <span>({{chosenPlaceType.name}})</span>
-          <i class="icon-chevron-up"></i>
+          <i class="icon-chevron-up"></i><i class="icon-chevron-down"></i>
         </h4>
       </div>
-      <div class="span12">
+      <div class="span12 togglee">
         <ul class="nav nav-pills">
           <li ng-repeat="placeType in chosenCity.placeTypes" class="{{placeType == chosenPlaceType && 'active'}}">
             <a href="" ng-click="choosePlaceType(placeType)">{{placeType.name}}</a>
