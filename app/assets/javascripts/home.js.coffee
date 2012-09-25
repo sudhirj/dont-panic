@@ -3,7 +3,7 @@ Deferred.installInto Zepto
 window.Controller = (scope) ->
   scope.data = {}
   request = $.ajax {
-    url: '/tree.json'
+    url: '/tree.json?cachebuster='+Math.random()
     dataType: 'json'
   }
   request.done (data) -> scope.$apply ->
@@ -23,7 +23,7 @@ window.Controller = (scope) ->
 
   scope.choosePlaceType = (placeType) -> scope.chosenPlaceType = placeType
 
-  scope.displayAddress = (address) -> address.replace /\n/, '<br/>'
+  scope.displayAddress = (address) -> address.replace /\n/g, '<br/>'
   scope.displayPhoneNumbers = (numbers) -> numbers.split(',')
   scope.mapLink = (place) -> "https://maps.google.com/maps?q=#{[place.name,place.address].join(',')}"
 
