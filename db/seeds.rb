@@ -18,3 +18,5 @@ City.create name: 'Gurgaon', country: india
 City.create name: 'Chicago', country: usa
 City.create name: 'New York', country: usa
 City.create name: 'Atlanta', country: usa
+admin = AdminUser.find_by_email('admin@example.com')
+comp = Company.create name:'Thoughtworks', admin_user: admin
