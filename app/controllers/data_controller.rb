@@ -1,9 +1,7 @@
 class DataController < ApplicationController
   def index
-    user = params[:username]
-    pass = params[:password]
-    admin_user = AdminUser.where(:email => user).first
-    admin_user = nil unless admin_user.valid_password? pass
+    admin_user = params[:username].present? ? AdminUser.find_by_email(params[:username]) : current_admin_user
+    admin_user = nil if params[:username].present? && admin_user.present? && !admin_user.valid_password?(params[:password])
     @countries = Country.all
     @cities = City.all
     @companies = Company.where(:admin_user_id => admin_user.id) if admin_user.present?
