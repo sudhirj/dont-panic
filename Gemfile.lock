@@ -180,7 +180,7 @@ GEM
       coderay (~> 1.0.5)
       method_source (~> 0.8)
       slop (~> 3.3.1)
-    rabl (0.7.9)
+    rabl (0.7.2)
       activesupport (>= 2.3.14)
       multi_json (~> 1.0)
     rack (1.4.1)
