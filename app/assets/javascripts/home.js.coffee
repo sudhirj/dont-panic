@@ -3,7 +3,7 @@ Deferred.installInto Zepto
 window.Controller = (scope) ->
   scope.data = {}
   request = $.ajax {
-    url: '/tree.json?cachebuster='+Math.random()
+    url: '/tree.json?cachebuster='+Math.random() + '&username=' + $.getUrlParam("username") + '&password=' + $.getUrlParam("password")
     dataType: 'json'
   }
   request.done (data) -> scope.$apply ->

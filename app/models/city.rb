@@ -7,12 +7,12 @@ class City < ActiveRecord::Base
 
   def companies
     offices.inject([]) do |memo, office|
-      company = memo.find {|c| c[:id] == office.company.id }
+      company = memo.find {|c| c[:id] == office.company.id}
       if company.nil?
-        company = {id: office.company.id, name: office.company.name, offices: []}
+        company = {admin_user_id: office.company.admin_user_id, id: office.company.id, name: office.company.name, offices: []}
         memo << company
       end
-      company[:offices] << office
+      company[:offices] << office if company.present?
       memo
     end
   end

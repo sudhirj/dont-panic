@@ -15,4 +15,5 @@
 //= require underscore
 //= require underscore.string
 //= require angular
+//= require get_url_params
 //= require home
